@@ -1,0 +1,48 @@
+import 'package:haidai_flutter_module/generated/json/base/json_convert_content.dart';
+
+class InventoryReportEntity with JsonConvert<InventoryReportEntity> {
+	String? orderSerial;
+	int? deptId;
+	int? topDeptId;
+	int? inventoryNum;
+	int? inventoryStyleNum;
+	int? noInventoryStyleNum;
+	int? totalGoodsStyleNum;
+	int? totalGoodsNum;
+	int? substandardInventoryNum;
+	int? substandardInventoryStyleNum;
+	int? substandardNoInventoryStyleNum;
+	int? totalSubstandardStyleNum;
+	int? totalSubstandardNum;
+	int? profitNormalStyleNum;
+	int? profitNormalNum;
+	int? profitSubstandardStyleNum;
+	int? profitSubstandardNum;
+	int? lossNormalStyleNum;
+	int? lossNormalNum;
+	int? lossSubstandardStyleNum;
+	int? lossSubstandardNum;
+	int? noProfitNormalStyleNum;
+	int? noProfitNormalNum;
+	int? noProfitSubstandardStyleNum;
+	int? noProfitSubstandardNum;
+	int? noLossNormalStyleNum;
+	int? noLossNormalNum;
+	int? noLossSubstandardStyleNum;
+	int? noLossSubstandardNum;
+	int? totalInventoryNum;
+	int? totalSubstandardInventoryNum;
+	String? regenerate;
+	String? startTime;
+	String? endTime;
+	String? canceled;
+	int? canceledUserId;
+	String? canceledTime;
+	int? id;
+	String? createdTime;
+	String? updatedTime;
+	int? createdBy;
+	int? updatedBy;
+	String? createdByName;
+	String? updatedByName;
+}

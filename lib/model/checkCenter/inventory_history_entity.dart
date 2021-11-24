@@ -1,0 +1,47 @@
+import 'package:haidai_flutter_module/generated/json/base/json_convert_content.dart';
+
+class InventoryHistoryEntity with JsonConvert<InventoryHistoryEntity> {
+	int? id;
+	String? createdTime;
+	String? updatedTime;
+	dynamic createdBy;
+	dynamic updatedBy;
+	dynamic createdByName;
+	dynamic updatedByName;
+	int? deptId;
+	int? topDeptId;
+	String? orderSerial;
+	int? inventoryNum;
+	int? inventoryStyleNum;
+	int? noInventoryStyleNum;
+	int? totalGoodsStyleNum;
+	int? totalGoodsNum;
+	int? substandardInventoryNum;
+	int? substandardInventoryStyleNum;
+	int? substandardNoInventoryStyleNum;
+	int? totalSubstandardStyleNum;
+	int? totalSubstandardNum;
+	int? profitNormalStyleNum;
+	int? profitNormalNum;
+	int? profitSubstandardStyleNum;
+	int? profitSubstandardNum;
+	int? lossNormalStyleNum;
+	int? lossNormalNum;
+	int? lossSubstandardStyleNum;
+	int? lossSubstandardNum;
+	int? noProfitNormalStyleNum;
+	int? noProfitNormalNum;
+	int? noProfitSubstandardStyleNum;
+	int? noProfitSubstandardNum;
+	int? noLossNormalStyleNum;
+	int? noLossNormalNum;
+	int? noLossSubstandardStyleNum;
+	int? noLossSubstandardNum;
+	String? regenerate;
+	String? startTime;
+	String? endTime;
+	String? status;
+	String? canceled;
+	dynamic canceledUserId;
+	dynamic canceledTime;
+}

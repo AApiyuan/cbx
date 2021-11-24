@@ -1,0 +1,91 @@
+import 'package:haidai_flutter_module/generated/json/base/json_convert_content.dart';
+import 'package:haidai_flutter_module/generated/json/base/json_field.dart';
+
+class StoreDictDo with JsonConvert<StoreDictDo> {
+	@JSONField(name: "MODEL")
+	List<StoreDictData>? mODEL;
+	@JSONField(name: "DESIGNER_NUMBER")
+	List<StoreDictData>? designerNumber;
+	@JSONField(name: "COMPONENT")
+	List<StoreDictData>? cOMPONENT;
+	@JSONField(name: "STREAM")
+	List<StoreDictData>? sTREAM;
+	@JSONField(name: "SUBSTANDARD_GOODS")
+	List<StoreDictData>? substandardGoods;
+	@JSONField(name: "CODE_TYPE")
+	List<StoreDictData>? codeType;
+	@JSONField(name: "PLATE_TYPE")
+	List<StoreDictData>? plateType;
+	@JSONField(name: "WARE_HOUSING")
+	List<StoreDictData>? wareHousing;
+	@JSONField(name: "MINIMUM_ORDER_QUANTITY")
+	List<StoreDictData>? minimumOrderQuantity;
+	@JSONField(name: "STANDARD")
+	List<StoreDictData>? sTANDARD;
+	@JSONField(name: "CHECK_NAME")
+	List<StoreDictData>? checkName;
+	@JSONField(name: "GOODS_CLASSIFY_MIDDLE")
+	List<StoreDictData>? goodsClassifyMiddle;
+	@JSONField(name: "PATTERN")
+	List<StoreDictData>? pATTERN;
+	@JSONField(name: "GENDER")
+	List<StoreDictData>? gENDER;
+	@JSONField(name: "AGE")
+	List<StoreDictData>? aGE;
+	@JSONField(name: "SERIES")
+	List<StoreDictData>? sERIES;
+	@JSONField(name: "POPULAR_ELEMENTS")
+	List<StoreDictData>? popularElements;
+	@JSONField(name: "GOODS_SEASON")
+	List<StoreDictData>? goodsSeason;
+	@JSONField(name: "QUALIFY_LEVEL")
+	List<StoreDictData>? qualifyLevel;
+	@JSONField(name: "GOODS_YEAR")
+	List<StoreDictData>? goodsYear;
+	@JSONField(name: "GOODS_CLASSIFY_SMALL")
+	List<StoreDictData>? goodsClassifySmall;
+	@JSONField(name: "LEVEL")
+	List<StoreDictData>? lEVEL;
+	@JSONField(name: "GOODS_LABEL")
+	List<StoreDictData>? goodsLabel;
+	@JSONField(name: "DELIVERY_DATE")
+	List<StoreDictData>? deliveryDate;
+	@JSONField(name: "MATERIAL")
+	List<StoreDictData>? mATERIAL;
+	@JSONField(name: "STYLE")
+	List<StoreDictData>? sTYLE;
+	@JSONField(name: "TECHNOLOGY")
+	List<StoreDictData>? tECHNOLOGY;
+	@JSONField(name: "AREA")
+	List<StoreDictData>? aREA;
+	@JSONField(name: "GOODS_CLASSIFY")
+	List<StoreDictData>? goodsClassify;
+	@JSONField(name: "GOODS_BRAND")
+	List<StoreDictData>? goodsBrand;
+	@JSONField(name: "SELLING_POINT")
+	List<StoreDictData>? sellingPoint;
+	@JSONField(name: "LOGISTICS_COMPANY")
+	List<StoreDictData>? logisticsCompany;
+	@JSONField(name: "SECURITY_TYPE")
+	List<StoreDictData>? securityType;
+	@JSONField(name: "OUT_OF_STOCK_TAG")
+	List<StoreDictData>? outOfStockTag;
+}
+
+class StoreDictData with JsonConvert<StoreDictData> {
+	int? id;
+	String? createdTime;
+	String? updatedTime;
+	int? createdBy;
+	int? updatedBy;
+	String? createdByName;
+	String? updatedByName;
+	int? deptId;
+	int? topDeptId;
+	int? parentId;
+	String? dictName;
+	String? dictType;
+	int? sort;
+	String? status;
+	int? useNum;
+}
