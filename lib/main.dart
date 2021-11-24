@@ -44,8 +44,12 @@ import 'model/store/res/customer_dept_config_do.dart';
 
 void main() {
   MyWidgetsFlutterBinding.ensureInitialized(); //解决2.5 的方法弃用问题
+  //数字键盘注册器
   NumberKeyboard.register();
-  runApp(ScreenUtilInit(
+
+  runApp(
+    //屏幕适配
+      ScreenUtilInit(
     builder: () => KeyboardRootWidget(child: MyApp()),
     designSize: Size(DeviceUtil.isPad()?1536:750, 1612),
   ));
@@ -58,7 +62,7 @@ void main() {
 
   print("flutter_tag===========main");
 }
-
+//获取升级版本号  可用于Android，ios升级判断
 initDevice() async {
   PackageInfo packageInfo = await PackageInfo.fromPlatform();
   if (Config.isIOS) {
@@ -68,7 +72,7 @@ initDevice() async {
   }
   print("flutter_tag==============initDevice=========${Config.isDebug}");
 }
-
+//访问数据库
 switchEvent(dynamic event) {
   NativeData nativeData = NativeData.fromJson(event);
   print("flutter_tag==============switchEvent=========$event");
@@ -109,7 +113,7 @@ switchEvent(dynamic event) {
       break;
   }
 }
-
+//下载Authorization
 void downloadDept(DownloadDeptEntity entity) async {
   HttpUtils.setHeaders({"Authorization": entity.token});
   initOss().then((value) => DeptQuery.init(entity.userId!));
@@ -123,7 +127,7 @@ void getConfigData(DeptConfigReqEntity reqEntity) async {
   MethodChannel(ChannelConfig.flutterToNativeConfig)
       .invokeMethod(ChannelConfig.methodConfigData, jsonEncode(configList));
 }
-
+//打印数据
 void createPrintData(PrintReqEntity reqEntity) async {
   int? id;
   if (reqEntity.orderRemitId != null) {
@@ -151,7 +155,7 @@ void createPrintData(PrintReqEntity reqEntity) async {
   MethodChannel(ChannelConfig.flutterToNativePrint)
       .invokeMethod(ChannelConfig.methodPrintData, jsonEncode(printDataList));
 }
-
+//阿里云上传文件
 Future initOss() async {
   var res = await OssApi.getOssDomain();
   return OSSClient.init(
@@ -167,7 +171,7 @@ Future initOss() async {
     },
   );
 }
-
+//更新
 updateDepId(UpdateDetpEntity data) {
   print("flutter_tag======updateDepId========$data");
   HttpUtils.setHeaders({"Authorization": data.token});
@@ -176,7 +180,7 @@ updateDepId(UpdateDetpEntity data) {
     loadData(data.depId!);
   }
 }
-
+//分页问题
 toPage(String value, String? mode) {
   print("flutter_tag============toPage=========$value");
   var helpPage = Routes.HELP + "?";
@@ -224,6 +228,7 @@ toPage(String value, String? mode) {
 
 class MyApp extends StatelessWidget {
   static const flutter_to_native =
+  //MethodChannel与原生交互
       const MethodChannel(ChannelConfig.flutterToNative);
 
   @override
@@ -243,6 +248,7 @@ class MyApp extends StatelessWidget {
     }
 
     return GetMaterialApp(
+      //初始化
         onInit: () async {
           // DbUtil.init().then((v) {
           //   //这里loading数据
@@ -252,6 +258,7 @@ class MyApp extends StatelessWidget {
           BackUtils.init();
           Proxy.init();
         },
+        //标签
         debugShowCheckedModeBanner: false,
         // initialRoute: page,
         theme: appThemeData,
@@ -265,10 +272,12 @@ class MyApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
         ],
+        //子类原素
         supportedLocales: [
           const Locale('en', 'US'),
           const Locale('zh', 'CN'),
         ],
+        //初始化路由
         initialRoute: Routes.SPLASH,
         builder: EasyLoading.init());
   }
